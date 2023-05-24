@@ -1,0 +1,24 @@
+extends ../layout
+block content 
+    h3 
+        a(href='/pet/create') Create new Pet 
+    h1 View All Pets
+    table
+        thead 
+            tr 
+                th Id 
+                th Name 
+                th Price 
+                th Image 
+                th Actions 
+        tbody 
+            each item in pets
+                tr 
+                    td=item.id 
+                    td=item.name 
+                    td=item.price+"$" 
+                    td 
+                        img(src="/images/" + item.image width="50" height="50")
+                    td 
+                        a(href="/pet/delete/"+item.id) Delete&nbsp;&nbsp;
+                        a(href="/pet/update/"+item.id) Update    

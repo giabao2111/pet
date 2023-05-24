@@ -1,0 +1,15 @@
+extends ../layout
+block content 
+    h1 Create new Pet 
+    form(action='/pet/create', method='post', enctype='multipart/form-data')
+        div 
+            |Name: 
+            input(name='name')
+        div 
+            |Price: 
+            input(name='price')
+        div 
+            |Image 
+            input(type="file" name='image')
+        div 
+            input(type="submit" value='Create')            
